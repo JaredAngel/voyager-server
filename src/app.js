@@ -23,11 +23,16 @@ app.use(cors());
 
 app.use(validateBearerToken);
 app.use('/api/voyages', voyagesRouter);
-app.use('/api/activities', activitiesRouter);
-app.use('/api/users', usersRouter);
+//app.use('/api/activities', activitiesRouter);
+//app.use('/api/users', usersRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
+});
+
+app.get('/xss', (req, res) => {
+  res.cookie('secretToken', '1234567890');
+  res.sendFile(__dirname + '/xss-example.html');
 });
 
 app.use(errorHandler);
