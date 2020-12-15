@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const path = require('path');
 const express = require('express');
 const xss = require('xss');
@@ -51,10 +52,36 @@ voyagesRouter
 voyagesRouter
   .route('/:voyage_id')
   .all((req, res, next) => {
-
+    VoyagesService.getById(
+      req.app.get('db'),
+      req.params.voyage_id
+    )
+      .then(voyage => {
+        if(!voyage) {
+          return res
+            .json({
+              error: { message: `Article doesn't exist` }
+            });
+        }
+        res.voyage = voyage; // save the voyage
+        next();
+      })
+      .catch(next);
+  })
+  .get((req, res, next) => {
+    res.json(serializeVoyage(res.voyage));
   })
   .delete((req, res, next) => {
-
+    VoyagesService.deleteVoyage(
+      req.app.get('db'),
+      req.params.voyage_id
+    )
+      .then(() => {
+        res
+          .status(204)
+          .end();
+      })
+      .catch(next);
   })
   .patch(jsonParser, (req, res, next) => {
 
