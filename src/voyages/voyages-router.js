@@ -34,6 +34,18 @@ voyagesRouter
         });
       }
     }
+    newVoyage.author_id = author;
+    VoyagesService.insertVoyage(
+      req.app.get('db'),
+      newVoyage
+    )
+      .then(voyage => {
+        res
+          .status(201)
+          .location(path.posix.join(req.originalUrl, `/${voyage.id}`))
+          .json(serializeVoyage(voyage));
+      })
+      .catch(next);
   });
 
 voyagesRouter
