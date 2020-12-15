@@ -1,0 +1,4 @@
+ALTER TABLE voyages
+  DROP COLUMN author_id;
+
+DROP TABLE IF EXISTS users;
