@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const path = require('path');
 const express = require('express');
 const xss = require('xss');
@@ -26,8 +27,8 @@ activitiesRouter
       .catch(next);
   })
   .post(jsonParser, (req, res, next) => {
-    const { title, content, label, created_ts, voyage_id } = req.body; // add user_id?
-    const newActivity = { title, content, label, voyage_id };
+    const { title, content, label, author_id } = req.body;
+    const newActivity = { title, content, label, author_id };
 
     for(const [key, value] of Object.entries(newActivity)) {
       if(!value) {
@@ -37,7 +38,7 @@ activitiesRouter
       }
     }
 
-    newActivity.created_ts = created_ts;
+    newActivity.author_id = author_id;
 
     ActivitiesService.insertActivity(
       req.app.get('db'),
@@ -51,3 +52,59 @@ activitiesRouter
       })
       .catch(next);
   });
+
+activitiesRouter
+  .route('/:activity_id')
+  .all((req, res, next) => {
+    ActivitiesService.getById(
+      req.app.get('db'),
+      req.params.activity_id
+    )
+      .then(activity => {
+        if (!activity) {
+          return res.status(404).json({
+            error: { message: `activity doesn't exist` }
+          });
+        }
+        res.activity = activity; // save the article
+        next();
+      })
+      .catch(next);
+  })
+  .get((req, res, next) => {
+    res.json(serializeActivity(res.activity));
+  })
+  .delete((req, res, next) => {
+    ActivitiesService.deleteactivity(
+      req.app.get('db'),
+      req.params.activity_id
+    )
+      .then(numRowsAffected => {
+        res.status(204).end();
+      })
+      .catch(next);
+  })
+  .patch(jsonParser, (req, res, next) => {
+    const { title, content, label } = req.body;
+    const activityToUpdate = { title, content, label };
+
+    const numberOfValues = Object.values(activityToUpdate).filter(Boolean).length;
+    if (numberOfValues === 0)
+      return res.status(400).json({
+        error: {
+          message: `Request body must contain either 'title', 'content', or 'label'`
+        }
+      });
+
+    ActivitiesService.updateactivity(
+      req.app.get('db'),
+      req.params.activity_id,
+      activityToUpdate
+    )
+      .then(numRowsAffected => {
+        res.status(204).end();
+      })
+      .catch(next);
+  });
+
+module.exports = activitiesRouter;

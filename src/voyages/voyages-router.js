@@ -25,7 +25,7 @@ voyagesRouter
       .catch(next);
   })
   .post(jsonParser, (req, res, next) => {
-    const { title, author } = req.body;
+    const { title, author_id } = req.body;
     const newVoyage = { title };
 
     for(const [key, value] of Object.entries(newVoyage)) {
@@ -35,7 +35,7 @@ voyagesRouter
         });
       }
     }
-    newVoyage.author_id = author;
+    newVoyage.author_id = author_id;
     VoyagesService.insertVoyage(
       req.app.get('db'),
       newVoyage
@@ -84,7 +84,30 @@ voyagesRouter
       .catch(next);
   })
   .patch(jsonParser, (req, res, next) => {
+    const { title } = req.body;
+    const voyageToUpdate = { title };
 
+    const numberOfValues = Object.values(voyageToUpdate)
+      .filter(Boolean).length;
+    if(numberOfValues === 0) {
+      return res
+        .status(400)
+        .json({
+          error: { message: `Request body must contain 'title'`}
+        });
+    }
+
+    VoyagesService.updateVoyage(
+      req.app.get('db'),
+      req.params.voyage_id,
+      voyageToUpdate
+    )
+      .then(numRowsAffected => {
+        res
+          .status(204)
+          .end();
+      })
+      .catch(next);
   });
 
 module.exports = voyagesRouter;

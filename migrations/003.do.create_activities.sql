@@ -15,7 +15,9 @@ CREATE TABLE activities (
   modified_ts TIMESTAMP DEFAULT now() NOT NULL,
   content TEXT,
   label activity_label,
-  rating star_rating NOT NULL,
+  --rating star_rating NOT NULL,
   voyage_id INTEGER
-    REFERENCES voyages(id) ON DELETE CASCADE NOT NULL
+    REFERENCES voyages(id) ON DELETE CASCADE NOT NULL,
+  author_id INTEGER
+    REFERENCES users(id) ON DELETE CASCADE NOT NULL
 );
