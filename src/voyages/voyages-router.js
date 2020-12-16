@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const xss = require('xss');
 const VoyagesService = require('./voyages-service');
+const logger = require('../logger');
 
 const voyagesRouter = express.Router();
 const jsonParser = express.json();
@@ -30,6 +31,7 @@ voyagesRouter
 
     for(const [key, value] of Object.entries(newVoyage)) {
       if(!value) {
+        logger.error(`${key} is required`);
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` }
         });
@@ -41,6 +43,7 @@ voyagesRouter
       newVoyage
     )
       .then(voyage => {
+        logger.info(`Voyage with id ${voyage.id} created.`);
         res
           .status(201)
           .location(path.posix.join(req.originalUrl, `/${voyage.id}`))

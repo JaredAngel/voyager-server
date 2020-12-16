@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const xss = require('xss');
 const ActivitiesService = require('./activities-service');
+const logger = require('../logger');
 
 const activitiesRouter = express.Router();
 const jsonParser = express.json();
@@ -32,6 +33,7 @@ activitiesRouter
 
     for(const [key, value] of Object.entries(newActivity)) {
       if(!value) {
+        logger.error(`${key} is required`);
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` }
         });
@@ -45,6 +47,7 @@ activitiesRouter
       newActivity
     )
       .then(activity => {
+        logger.info(`Activity with id ${activity.id} created.`);
         res
           .status(201)
           .location(path.posix.join(req.originalUrl, `/${activity.id}`))
@@ -62,6 +65,7 @@ activitiesRouter
     )
       .then(activity => {
         if (!activity) {
+          
           return res.status(404).json({
             error: { message: `activity doesn't exist` }
           });
