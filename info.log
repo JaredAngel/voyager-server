@@ -95,3 +95,13 @@
 {"message":"voyage_id is required","level":"error"}
 {"message":"Voyage with id 1 created.","level":"info"}
 {"message":"title is required","level":"error"}
+{"message":"select * from \"activities\" - relation \"activities\" does not exist","level":"error"}
+{"message":"select * from \"voyages\" - relation \"voyages\" does not exist","level":"error"}
+{"message":"select * from \"activities\" - relation \"activities\" does not exist","level":"error"}
+{"message":"select * from \"voyages\" - relation \"voyages\" does not exist","level":"error"}
+{"message":"select * from \"activities\" - relation \"activities\" does not exist","level":"error"}
+{"message":"select * from \"voyages\" - relation \"voyages\" does not exist","level":"error"}
+{"message":"Activity with id 9 created.","level":"info"}
+{"message":"Voyage with id 5 created.","level":"info"}
+{"message":"Activity with id 10 created.","level":"info"}
+{"message":"Activity with id 11 created.","level":"info"}
