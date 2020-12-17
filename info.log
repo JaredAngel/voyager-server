@@ -71,3 +71,27 @@
 {"message":"Unauthorized request to path: /api/activities","level":"error"}
 {"message":"Unauthorized request to path: /api/activities","level":"error"}
 {"message":"Unauthorized request to path: /api/voyages","level":"error"}
+{"message":"Unauthorized request to path: /api/voyages","level":"error"}
+{"message":"title is required","level":"error"}
+{"message":"Voyage with id 1 created.","level":"info"}
+{"message":"title is required","level":"error"}
+{"message":"Voyage with id 1 created.","level":"info"}
+{"message":"title is required","level":"error"}
+{"message":"Voyage with id 1 created.","level":"info"}
+{"message":"title is required","level":"error"}
+{"message":"Voyage with id 1 created.","level":"info"}
+{"message":"title is required","level":"error"}
+{"message":"Activity with id 1 created.","level":"info"}
+{"message":"Activity with id 1 created.","level":"info"}
+{"message":"Activity with id 1 created.","level":"info"}
+{"message":"title is required","level":"error"}
+{"message":"label is required","level":"error"}
+{"message":"content is required","level":"error"}
+{"message":"voyage_id is required","level":"error"}
+{"message":"Activity with id 1 created.","level":"info"}
+{"message":"title is required","level":"error"}
+{"message":"label is required","level":"error"}
+{"message":"content is required","level":"error"}
+{"message":"voyage_id is required","level":"error"}
+{"message":"Voyage with id 1 created.","level":"info"}
+{"message":"title is required","level":"error"}

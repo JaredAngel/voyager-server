@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const { NODE_ENV } = require('./config');
-const validateBearerToken = require('./validateBearerToken');
+//const validateBearerToken = require('./validateBearerToken');
 const errorHandler = require('./error-handler');
 
 const voyagesRouter = require('./voyages/voyages-router');
@@ -21,7 +21,7 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
-app.use(validateBearerToken);
+//app.use(validateBearerToken);
 app.use('/api/voyages', voyagesRouter);
 app.use('/api/activities', activitiesRouter);
 app.use('/api/users', usersRouter);

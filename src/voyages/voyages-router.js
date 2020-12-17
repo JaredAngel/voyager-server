@@ -60,9 +60,9 @@ voyagesRouter
     )
       .then(voyage => {
         if(!voyage) {
-          return res
+          return res.status(404)
             .json({
-              error: { message: `Article doesn't exist` }
+              error: { message: `Voyage doesn't exist` }
             });
         }
         res.voyage = voyage; // save the voyage

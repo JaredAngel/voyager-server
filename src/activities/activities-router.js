@@ -63,12 +63,11 @@ activitiesRouter
     )
       .then(activity => {
         if (!activity) {
-          
           return res.status(404).json({
-            error: { message: `activity doesn't exist` }
+            error: { message: `Activity doesn't exist` }
           });
         }
-        res.activity = activity; // save the article
+        res.activity = activity; // save the activity
         next();
       })
       .catch(next);
