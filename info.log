@@ -65,3 +65,9 @@
 {"message":"Activity with id 11 created.","level":"info"}
 {"message":"Activity with id 12 created.","level":"info"}
 {"message":"Activity with id 13 created.","level":"info"}
+{"message":"Unauthorized request to path: /api/activities","level":"error"}
+{"message":"Unauthorized request to path: /api/voyages","level":"error"}
+{"message":"Unauthorized request to path: /api/voyages","level":"error"}
+{"message":"Unauthorized request to path: /api/activities","level":"error"}
+{"message":"Unauthorized request to path: /api/activities","level":"error"}
+{"message":"Unauthorized request to path: /api/voyages","level":"error"}
