@@ -2,3 +2,66 @@
 {"message":"select * from \"voyages\" - relation \"voyages\" does not exist","level":"error"}
 {"message":"select * from \"voyages\" - relation \"voyages\" does not exist","level":"error"}
 {"message":"select * from \"voyages\" - relation \"voyages\" does not exist","level":"error"}
+{"message":"ENOENT: no such file or directory, stat 'C:\\Users\\jared\\Documents\\Thinkful\\Projects\\voyager\\voyager-server\\src\\xss-example.html'","level":"error"}
+{"message":"Unauthorized request to path: /api/activities/7","level":"error"}
+{"message":"Unauthorized request to path: /api/activities/7","level":"error"}
+{"message":"Unauthorized request to path: /api/activities/7","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"Unauthorized request to path: /api/activities","level":"error"}
+{"message":"Unauthorized request to path: /api/voyages","level":"error"}
+{"message":"Unauthorized request to path: /api/activities","level":"error"}
+{"message":"Unauthorized request to path: /api/voyages","level":"error"}
+{"message":"Unauthorized request to path: /activities","level":"error"}
+{"message":"Unauthorized request to path: /voyages","level":"error"}
+{"message":"ActivitiesService.deleteactivity is not a function","level":"error"}
+{"message":"ActivitiesService.deleteactivity is not a function","level":"error"}
+{"message":"author_id is required","level":"error"}
+{"message":"ActivitiesService.deleteactivity is not a function","level":"error"}
+{"message":"ActivitiesService.deleteactivity is not a function","level":"error"}
+{"message":"content is required","level":"error"}
+{"message":"author_id is required","level":"error"}
+{"message":"author_id is required","level":"error"}
+{"message":"select * from \"activities\" where \"id\" = $1 limit $2 - invalid input syntax for type integer: \"undefined\"","level":"error"}
+{"message":"ActivitiesService.deleteactivity is not a function","level":"error"}
+{"message":"ActivitiesService.deleteactivity is not a function","level":"error"}
+{"message":"ActivitiesService.deleteactivity is not a function","level":"error"}
+{"message":"Voyage with id 5 created.","level":"info"}
+{"message":"Voyage with id 6 created.","level":"info"}
+{"message":"Voyage with id 7 created.","level":"info"}
+{"message":"Voyage with id 8 created.","level":"info"}
+{"message":"Voyage with id 9 created.","level":"info"}
+{"message":"author_id is required","level":"error"}
+{"message":"insert into \"activities\" (\"content\", \"label\", \"title\") values ($1, $2, $3) returning * - null value in column \"voyage_id\" of relation \"activities\" violates not-null constraint","level":"error"}
+{"message":"voyage_id is required","level":"error"}
+{"message":"insert into \"activities\" (\"content\", \"label\", \"title\", \"voyage_id\") values ($1, $2, $3, $4) returning * - null value in column \"author_id\" of relation \"activities\" violates not-null constraint","level":"error"}
+{"message":"Activity with id 9 created.","level":"info"}
+{"message":"Activity with id 10 created.","level":"info"}
+{"message":"select * from \"activities\" where \"id\" = $1 limit $2 - invalid input syntax for type integer: \"undefined\"","level":"error"}
+{"message":"Activity with id 11 created.","level":"info"}
+{"message":"Activity with id 12 created.","level":"info"}
+{"message":"Activity with id 13 created.","level":"info"}

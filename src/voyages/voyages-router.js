@@ -12,7 +12,6 @@ const serializeVoyage = voyage => ({
   id: voyage.id,
   title: xss(voyage.title),
   created_ts: voyage.created_ts,
-  author_id: voyage.author_id,
 });
 
 voyagesRouter
@@ -26,7 +25,7 @@ voyagesRouter
       .catch(next);
   })
   .post(jsonParser, (req, res, next) => {
-    const { title, author_id } = req.body;
+    const { title } = req.body;
     const newVoyage = { title };
 
     for(const [key, value] of Object.entries(newVoyage)) {
@@ -37,7 +36,7 @@ voyagesRouter
         });
       }
     }
-    newVoyage.author_id = author_id;
+    
     VoyagesService.insertVoyage(
       req.app.get('db'),
       newVoyage

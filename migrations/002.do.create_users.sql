@@ -6,8 +6,3 @@ CREATE TABLE users (
   password TEXT,
   created_ts TIMESTAMPTZ NOT NULL DEFAULT now()
 );
-
-ALTER TABLE voyages
-  ADD COLUMN
-    author_id INTEGER REFERENCES users(id)
-    ON DELETE SET NULL;

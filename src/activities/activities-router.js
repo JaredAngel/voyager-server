@@ -28,8 +28,8 @@ activitiesRouter
       .catch(next);
   })
   .post(jsonParser, (req, res, next) => {
-    const { title, content, label, author_id } = req.body;
-    const newActivity = { title, content, label, author_id };
+    const { title, content, label, voyage_id } = req.body;
+    const newActivity = { title, content, label, voyage_id };
 
     for(const [key, value] of Object.entries(newActivity)) {
       if(!value) {
@@ -39,8 +39,6 @@ activitiesRouter
         });
       }
     }
-
-    newActivity.author_id = author_id;
 
     ActivitiesService.insertActivity(
       req.app.get('db'),
@@ -79,7 +77,7 @@ activitiesRouter
     res.json(serializeActivity(res.activity));
   })
   .delete((req, res, next) => {
-    ActivitiesService.deleteactivity(
+    ActivitiesService.deleteActivity(
       req.app.get('db'),
       req.params.activity_id
     )
