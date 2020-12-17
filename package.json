@@ -14,7 +14,7 @@
     "deploy": "git push heroku main"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jared Angel Escobedo",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
